@@ -30,7 +30,7 @@ class os2 {
       x64                  => true,
       downloadDir          => "/data/install",
       urandomJavaFix       => true,
-      sourcePath           => "/vagrant",
+      sourcePath           => "/tmp",
   }
 
 
@@ -85,12 +85,11 @@ class os2 {
   }
   
   
-  # turn off iptables
-  
-  service { iptables:
-        enable    => false,
-        ensure    => false,
-        hasstatus => true,
+  # turn off firewall - UFW
+
+  exec { firewall_shutdown:
+        command => '/usr/sbin/ufw disable',
+        user => root,
   }
 
 
@@ -105,9 +104,9 @@ class wls12{
   $osWlHome        = "/oracle/product/Middleware12c/wlserver"
   $user            = "oracle"
   $group           = "dba"
-  $downloadDir     = "/data/install"
+  $downloadDir     = "/tmp"
 
-  $puppetDownloadMntPoint = "/vagrant"
+  $puppetDownloadMntPoint = "/tmp"
 
   wls::installwls{'wls12c':
     version                => '1212',
