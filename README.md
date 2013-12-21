@@ -1,7 +1,7 @@
-vagrant-wls12c-centos64
+vagrant-wls12c-ubuntu64
 =======================
 
-Detailed steps can be found here:
+Based on Detailed steps can be found here:
 
 http://vbatik.wordpress.com/2013/10/11/weblogic-12-1-2-00-with-vagrant/
 
@@ -14,6 +14,6 @@ Oracle released a new version of the JDK 1.7u45. This has been reflected and tes
 
 site.pp is located here:
 
-https://github.com/matthewbaldwin/vagrant-wls12c-centos64/blob/master/puppet/manifests/site.pp
+https://github.com/skibum55/vagrant-wls12c-ubuntu64/blob/master/puppet/manifests/site.pp
 
-You will need to modify this for your particular jdk that you download. 
+You will need to modify this for your particular jdk that you downloaded and the location of the downloaded jar files. 
